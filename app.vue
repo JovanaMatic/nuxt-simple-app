@@ -1,3 +1,10 @@
+<script setup>
+
+const darkStore = useDarkStore()
+
+console.log(darkStore.isdarkMode)
+</script>
+
 <template>
   <Nav />
   <Heading />
