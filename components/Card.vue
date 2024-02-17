@@ -1,9 +1,3 @@
-
-import type { setBlockTracking } from 'vue';
-
-import type { Card } from '#build/components';
-
-import type { Card } from '#build/components';
 <script setup lang="ts">
   interface CardProps {
     card: {
@@ -14,13 +8,16 @@ import type { Card } from '#build/components';
   }
 
   const props = defineProps<CardProps>()
+
 </script>
 
 <template>
   <div class="card">
     <img :src="card.img" alt="" />
-    <h3>{{ card.title }}</h3>
-    <p>{{ card.author }}</p>
+    <div class="content">
+      <h3>{{ props.card.title }}</h3>
+      <p>{{ props.card.author }}</p>
+    </div>
 
   </div>
 </template>
@@ -33,18 +30,18 @@ import type { Card } from '#build/components';
     margin-bottom: 30px;
     border-radius: 5px;
     overflow: hidden;
-  }
+}
 
-  img {
-    width: 100%;
-    height: 100%;
-  }
+img {
+  width: 100%;
+  height: 200px;
+}
 
-  .content {
-    padding: 10px;
-  }
+.content {
+  padding: 10px;
+}
 
-  p {
-    margin-top: 10px;
-  }
+p {
+  margin-top: 10px;
+}
 </style>
