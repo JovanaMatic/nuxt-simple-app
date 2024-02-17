@@ -1,14 +1,14 @@
 <script setup>
-
 const darkStore = useDarkStore()
 
-console.log(darkStore.isdarkMode)
 </script>
 
 <template>
-  <Nav />
-  <Heading />
-  <Cards />
+  <div :class="darkStore.isdarkMode ? 'darkMode' : null">
+    <Nav :class="darkStore.isdarkMode ? 'darkMode' : null" />
+    <Heading />
+    <Cards />
+  </div>
 </template>
 
 <style>
@@ -19,5 +19,9 @@ console.log(darkStore.isdarkMode)
   body {
     padding: 0;
     margin: 0;
+  }
+
+  .darkMode {
+    background-color: rgba(53, 52, 52, 0.77);
   }
 </style>

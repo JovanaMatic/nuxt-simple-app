@@ -1,14 +1,15 @@
 <script setup>
+  const { isdarkMode, toggledarMode } = useDarkStore()
 
 </script>
 
 <template>
   <div>
-    <nav>
+    <nav :class="isdarkMode ? 'darkMode' : null">
       <div>
         <NuxtLink class="link" to="/">Article</NuxtLink>
         <label class="switch">
-        <input type="checkbox" />
+        <input type="checkbox" @click="toggledarMode()"/>
         <span class="slider round"></span>
       </label>
       </div>
